@@ -1,0 +1,32 @@
+<!-- simple form for capturing username of account -->
+
+<h1>SIMPLE APP FOR CAPTURING GITHUB REPOSITORY DETAILS</h1>
+<form [formGroup]="gform" (ngSubmit)="onsubmit()">
+    <label>Enter Your GitHub Username</label><br>
+ <input type="text" formControlName="camp" name = "camp" ><br>
+ <button type="submit"> click </button>
+ </form>
+ 
+ <!-- simple table for showing all repository of account -->
+ <table >
+     <tr *ngFor="let d of data">
+         <td >{{d.id}}</td>
+         <td>{{d.name}}</td>
+         <td>{{d.full_name}}</td>
+         <td>{{d.language}}</td>
+         <td (click)="onSelect()">Select</td>
+
+     </tr>
+ </table>
+
+ <!-- simple table for showing all selected  repositories of a account -->
+ <table >
+    <tr *ngFor="let s of selected">
+        <td >{{s.id}}</td>
+        <td>{{s.name}}</td>
+        <td>{{s.full_name}}</td>
+        <td>{{s.language}}</td>
+    </tr>
+</table>
+
+  
